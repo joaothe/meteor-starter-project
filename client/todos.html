@@ -34,6 +34,11 @@
   </body>
 
   <template name="main">
+    <form class="new-todo">
+      <div class="form-group">
+        <input type="text" name="text" class="form-control" placeholder="Enter a Todo.. ">  
+      </div>
+    </form>
     <ul>
       {{#each todos}}
         <li>
