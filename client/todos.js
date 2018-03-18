@@ -1,7 +1,7 @@
 
 Template.main.helpers({
   todos: () => {
-    return Todos.find();
+    return Todos.find({}, {sort: {createdAt: -1}});
   }
 
 });
@@ -18,5 +18,15 @@ Template.main.events({
     event.target.text.value = '';
 
     return false;
+  },
+
+  "click .toggle-checking": function(){
+    Todos.update(this._id, {$set:{checked: ! this.checked}});
+  },
+
+  "click .delete-todo": function(){
+    if(confirm('Are you sure?'))
+    Todos.remove(this._id);
   }
+
 });
