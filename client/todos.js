@@ -30,3 +30,7 @@ Template.main.events({
   }
 
 });
+
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_ONLY"
+});
